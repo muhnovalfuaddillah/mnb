@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House of Diva - Portfolio Premium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Poppins:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #1a0a2e;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(120, 40, 200, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(200, 60, 150, 0.15) 0%, transparent 50%);
+            background-attachment: fixed;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+        
+        @keyframes shine {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+        
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .glass-effect {
+            background: rgba(30, 15, 50, 0.6);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+        
+        .gold-glow {
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.3), 0 0 80px rgba(255, 215, 0, 0.15);
+        }
+        
+        .shine-effect {
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.3), transparent);
+            background-size: 200% 100%;
+            animation: shine 3s infinite;
+        }
+        
+        .hover-lift {
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 25px 50px rgba(255, 215, 0, 0.4);
+        }
+        
+        .gold-text {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FFD700 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .purple-gold-gradient {
+            background: linear-gradient(135deg, #4a0e4e 0%, #81007f 50%, #c77dff 100%);
+        }
+        
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #FFD700;
+            border-radius: 50%;
+            animation: sparkle 2s infinite;
+        }
+        
+        .ornament {
+            position: absolute;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+        
+        .shop-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .shop-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), transparent);
+            transition: left 0.7s;
+        }
+        
+        .shop-card:hover::before {
+            left: 100%;
+        }
+        
+        .crown-icon {
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+        }
+        
+        .diamond-pattern {
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 215, 0, 0.03) 10px, rgba(255, 215, 0, 0.03) 20px),
+                repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(255, 215, 0, 0.03) 10px, rgba(255, 215, 0, 0.03) 20px);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+    <!-- Decorative Ornaments -->
+    <div class="ornament top-0 left-0 w-64 h-64">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#FFD700" d="M45.4,-56.8C58.5,-45.5,68.5,-31.4,73.1,-15.4C77.7,0.6,76.9,18.5,69.3,33.1C61.7,47.7,47.3,58.9,31.3,64.8C15.3,70.7,-2.3,71.3,-18.9,66.7C-35.5,62.1,-51,52.3,-61.1,38.4C-71.2,24.5,-75.9,6.5,-73.4,-10.6C-70.9,-27.7,-61.2,-43.9,-47.8,-55C-34.4,-66.1,-17.2,-72.1,-0.3,-71.7C16.6,-71.3,33.2,-64.5,45.4,-56.8Z" transform="translate(100 100)" />
+        </svg>
+    </div>
+    
+    <!-- Header -->
+    <header class="relative py-16 overflow-hidden fade-in-up">
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <!-- Logo -->
+            <div class="mb-8 flex justify-center">
+                <div class="relative float-animation">
+                    <img src="logo.png" alt="House of Diva Logo" class="w-64 h-64 object-cover rounded-full drop-shadow-2xl border-4 border-yellow-500/50" style="filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.5));">
+                    <div class="sparkle" style="top: 10%; left: 20%; animation-delay: 0s;"></div>
+                    <div class="sparkle" style="top: 30%; right: 15%; animation-delay: 0.5s;"></div>
+                    <div class="sparkle" style="bottom: 20%; left: 25%; animation-delay: 1s;"></div>
+                    <div class="sparkle" style="bottom: 15%; right: 20%; animation-delay: 1.5s;"></div>
+                </div>
+            </div>
+            
+            <h1 class="text-6xl md:text-7xl font-bold mb-3 text-white" style="text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);">HOUSE OF</h1>
+            <h1 class="text-7xl md:text-8xl font-bold mb-6 gold-text" style="text-shadow: 0 0 30px rgba(255, 215, 0, 0.7);">DIVA</h1>
+            <p class="text-2xl md:text-3xl text-purple-200 mb-8 italic" style="font-family: 'Playfair Display', serif;">Where Elegance Meets Excellence</p>
+            
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <div class="glass-effect px-8 py-3 rounded-full text-white border-2 border-yellow-600/50">
+                    <i class="fas fa-crown text-yellow-400 mr-2"></i> Premium Quality
+                </div>
+                <div class="glass-effect px-8 py-3 rounded-full text-white border-2 border-yellow-600/50">
+                    <i class="fas fa-star text-yellow-400 mr-2"></i> Trusted Brand
+                </div>
+                <div class="glass-effect px-8 py-3 rounded-full text-white border-2 border-yellow-600/50">
+                    <i class="fas fa-gem text-yellow-400 mr-2"></i> Exclusive Products
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="py-20 relative fade-in-up diamond-pattern" style="animation-delay: 0.2s">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="glass-effect p-12 md:p-16 rounded-3xl gold-glow border-2 border-yellow-600/30">
+                <div class="text-center mb-8">
+                    <i class="fas fa-crown text-6xl text-yellow-400 crown-icon mb-4"></i>
+                    <h2 class="text-5xl md:text-6xl font-bold mb-6 gold-text">About Us</h2>
+                </div>
+                <p class="text-xl md:text-2xl text-purple-100 text-center leading-relaxed mb-8" style="font-family: 'Playfair Display', serif;">
+                    House of Diva adalah destinasi belanja premium yang menghadirkan koleksi produk berkualitas tinggi dengan sentuhan kemewahan. 
+                    Kami berkomitmen untuk memberikan pengalaman berbelanja yang istimewa dengan produk pilihan terbaik yang telah dipercaya oleh ribuan pelanggan setia di seluruh Indonesia.
+                </p>
+                
+                <div class="grid md:grid-cols-4 gap-6 mt-12">
+                    <div class="text-center glass-effect p-6 rounded-2xl border border-yellow-600/20">
+                        <div class="text-5xl font-bold gold-text mb-2">15K+</div>
+                        <div class="text-purple-200 text-sm uppercase tracking-wider">Produk Terjual</div>
+                    </div>
+                    <div class="text-center glass-effect p-6 rounded-2xl border border-yellow-600/20">
+                        <div class="text-5xl font-bold gold-text mb-2">4.9</div>
+                        <div class="text-purple-200 text-sm uppercase tracking-wider">Rating</div>
+                    </div>
+                    <div class="text-center glass-effect p-6 rounded-2xl border border-yellow-600/20">
+                        <div class="text-5xl font-bold gold-text mb-2">99%</div>
+                        <div class="text-purple-200 text-sm uppercase tracking-wider">Kepuasan</div>
+                    </div>
+                    <div class="text-center glass-effect p-6 rounded-2xl border border-yellow-600/20">
+                        <div class="text-5xl font-bold gold-text mb-2">24/7</div>
+                        <div class="text-purple-200 text-sm uppercase tracking-wider">Support</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marketplace Links -->
+    <section class="py-20 relative fade-in-up" style="animation-delay: 0.4s">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <i class="fas fa-shopping-bag text-5xl text-yellow-400 crown-icon mb-4"></i>
+                <h2 class="text-5xl md:text-6xl font-bold mb-4 gold-text">Visit Our Store</h2>
+                <p class="text-purple-200 text-xl md:text-2xl" style="font-family: 'Playfair Display', serif;">Belanja mudah di platform favorit Anda</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Shopee -->
+                <a href="https://shopee.co.id/vall.dev?originalCategoryId=11043151#product_list" target="_blank" class="shop-card glass-effect p-10 rounded-3xl hover-lift gold-glow border-2 border-yellow-600/30 group">
+                    <div class="bg-gradient-to-br from-orange-500 to-orange-600 w-28 h-28 rounded-3xl flex items-center justify-center mb-6 mx-auto transform group-hover:rotate-12 transition-transform duration-500 shadow-2xl">
+                        <i class="fab fa-shopify text-white text-6xl"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-3 text-center">Shopee</h3>
+                    <p class="text-purple-200 text-center mb-6 leading-relaxed">Belanja hemat dengan gratis ongkir & cashback menarik setiap hari</p>
+                    <div class="text-center">
+                        <span class="inline-block bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-3 rounded-full text-sm font-bold uppercase tracking-wider shadow-lg">
+                            Kunjungi Toko <i class="fas fa-arrow-right ml-2"></i>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Tokopedia -->
+                <a href="https://www.tokopedia.com/lumiskin-hb" target="_blank" class="shop-card glass-effect p-10 rounded-3xl hover-lift gold-glow border-2 border-yellow-600/30 group">
+                    <div class="bg-gradient-to-br from-green-500 to-green-600 w-28 h-28 rounded-3xl flex items-center justify-center mb-6 mx-auto transform group-hover:rotate-12 transition-transform duration-500 shadow-2xl">
+                        <i class="fas fa-shopping-bag text-white text-6xl"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-3 text-center">Tokopedia</h3>
+                    <p class="text-purple-200 text-center mb-6 leading-relaxed">Produk original dengan garansi terpercaya dan sistem pembayaran aman</p>
+                    <div class="text-center">
+                        <span class="inline-block bg-gradient-to-r from-green-500 to-green-600 text-white px-8 py-3 rounded-full text-sm font-bold uppercase tracking-wider shadow-lg">
+                            Kunjungi Toko <i class="fas fa-arrow-right ml-2"></i>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- WhatsApp -->
+                <a href="https://wa.me/6285100137595" target="_blank" class="shop-card glass-effect p-10 rounded-3xl hover-lift gold-glow border-2 border-yellow-600/30 group">
+                    <div class="bg-gradient-to-br from-green-400 to-green-500 w-28 h-28 rounded-3xl flex items-center justify-center mb-6 mx-auto transform group-hover:rotate-12 transition-transform duration-500 shadow-2xl">
+                        <i class="fab fa-whatsapp text-white text-6xl"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-3 text-center">WhatsApp</h3>
+                    <p class="text-purple-200 text-center mb-6 leading-relaxed">Chat langsung untuk konsultasi produk & order dengan respon cepat</p>
+                    <div class="text-center">
+                        <span class="inline-block bg-gradient-to-r from-green-400 to-green-500 text-white px-8 py-3 rounded-full text-sm font-bold uppercase tracking-wider shadow-lg">
+                            Chat Sekarang <i class="fas fa-arrow-right ml-2"></i>
+                        </span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-20 relative fade-in-up diamond-pattern" style="animation-delay: 0.6s">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <i class="fas fa-award text-5xl text-yellow-400 crown-icon mb-4"></i>
+                <h2 class="text-5xl md:text-6xl font-bold mb-4 gold-text">Why Choose Us</h2>
+                <p class="text-purple-200 text-xl md:text-2xl" style="font-family: 'Playfair Display', serif;">Keunggulan yang membuat kami berbeda</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                <div class="glass-effect p-10 rounded-3xl text-center hover-lift gold-glow border-2 border-yellow-600/30">
+                    <div class="bg-gradient-to-br from-yellow-500 to-yellow-600 w-24 h-24 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-2xl">
+                        <i class="fas fa-shield-alt text-white text-5xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 gold-text">100% Terpercaya</h3>
+                    <p class="text-purple-200 leading-relaxed">Produk original bersertifikat dengan garansi uang kembali 100%</p>
+                </div>
+                
+                <div class="glass-effect p-10 rounded-3xl text-center hover-lift gold-glow border-2 border-yellow-600/30">
+                    <div class="bg-gradient-to-br from-yellow-500 to-yellow-600 w-24 h-24 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-2xl">
+                        <i class="fas fa-shipping-fast text-white text-5xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 gold-text">Pengiriman Express</h3>
+                    <p class="text-purple-200 leading-relaxed">Same day delivery untuk area tertentu dengan packing ekstra aman</p>
+                </div>
+                
+                <div class="glass-effect p-10 rounded-3xl text-center hover-lift gold-glow border-2 border-yellow-600/30">
+                    <div class="bg-gradient-to-br from-yellow-500 to-yellow-600 w-24 h-24 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-2xl">
+                        <i class="fas fa-crown text-white text-5xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 gold-text">Kualitas Premium</h3>
+                    <p class="text-purple-200 leading-relaxed">Produk pilihan berkualitas tinggi dengan standar internasional</p>
+                </div>
+                
+                <div class="glass-effect p-10 rounded-3xl text-center hover-lift gold-glow border-2 border-yellow-600/30">
+                    <div class="bg-gradient-to-br from-yellow-500 to-yellow-600 w-24 h-24 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-2xl">
+                        <i class="fas fa-headset text-white text-5xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 gold-text">Layanan 24/7</h3>
+                    <p class="text-purple-200 leading-relaxed">Customer service profesional siap membantu kapan saja Anda butuhkan</p>
+                </div>
+                
+                <div class="glass-effect p-10 rounded-3xl text-center hover-lift gold-glow border-2 border-yellow-600/30">
+                    <div class="bg-gradient-to-br from-yellow-500 to-yellow-600 w-24 h-24 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-2xl">
+                        <i class="fas fa-gift text-white text-5xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 gold-text">Bonus Eksklusif</h3>
+                    <p class="text-purple-200 leading-relaxed">Dapatkan promo spesial dan bonus menarik untuk setiap pembelian</p>
+                </div>
+                
+                <div class="glass-effect p-10 rounded-3xl text-center hover-lift gold-glow border-2 border-yellow-600/30">
+                    <div class="bg-gradient-to-br from-yellow-500 to-yellow-600 w-24 h-24 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-2xl">
+                        <i class="fas fa-sync-alt text-white text-5xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 gold-text">Easy Return</h3>
+                    <p class="text-purple-200 leading-relaxed">Proses retur dan tukar barang yang mudah, cepat dan tanpa ribet</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 relative fade-in-up" style="animation-delay: 0.8s">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <i class="fas fa-comments text-5xl text-yellow-400 crown-icon mb-4"></i>
+                <h2 class="text-5xl md:text-6xl font-bold mb-4 gold-text">Customer Reviews</h2>
+                <p class="text-purple-200 text-xl md:text-2xl" style="font-family: 'Playfair Display', serif;">Kepuasan pelanggan adalah prioritas kami</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                <div class="glass-effect p-10 rounded-3xl hover-lift gold-glow border-2 border-yellow-600/30">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-gradient-to-br from-yellow-500 to-yellow-600 w-20 h-20 rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg">
+                            A
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-white font-bold text-xl">Ani Susanti</h4>
+                            <div class="text-yellow-400 text-lg">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-purple-200 leading-relaxed text-lg">"Produknya benar-benar premium dan original! Pengiriman super cepat dan packing sangat rapi. House of Diva memang the best!"</p>
+                </div>
+                
+                <div class="glass-effect p-10 rounded-3xl hover-lift gold-glow border-2 border-yellow-600/30">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-gradient-to-br from-yellow-500 to-yellow-600 w-20 h-20 rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg">
+                            B
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-white font-bold text-xl">Budi Santoso</h4>
+                            <div class="text-yellow-400 text-lg">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-purple-200 leading-relaxed text-lg">"Kualitas produk sesuai ekspektasi bahkan lebih! Harga bersaing dan pelayanan sangat memuaskan. Highly recommended!"</p>
+                </div>
+                
+                <div class="glass-effect p-10 rounded-3xl hover-lift gold-glow border-2 border-yellow-600/30">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-gradient-to-br from-yellow-500 to-yellow-600 w-20 h-20 rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg">
+                            C
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-white font-bold text-xl">Citra Dewi</h4>
+                            <div class="text-yellow-400 text-lg">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-purple-200 leading-relaxed text-lg">"Packingnya luar biasa rapi dan aman! Produk sampai dalam kondisi perfect. Ini toko langganan saya sekarang!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media -->
+    <section class="py-20 relative fade-in-up diamond-pattern" style="animation-delay: 1s">
+        <div class="container mx-auto px-4 text-center">
+            <i class="fas fa-heart text-5xl text-yellow-400 crown-icon mb-4"></i>
+            <h2 class="text-5xl md:text-6xl font-bold mb-4 gold-text">Follow Us</h2>
+            <p class="text-purple-200 mb-12 text-xl md:text-2xl" style="font-family: 'Playfair Display', serif;">Dapatkan update promo & produk terbaru</p>
+            
+            <div class="flex justify-center gap-6 flex-wrap">
+                <a href="#" class="glass-effect w-20 h-20 rounded-2xl flex items-center justify-center hover-lift gold-glow border-2 border-yellow-600/30 group">
+                    <i class="fab fa-instagram text-4xl text-pink-400 group-hover:scale-125 transition-transform duration-300"></i>
+                </a>
+                <a href="#" class="glass-effect w-20 h-20 rounded-2xl flex items-center justify-center hover-lift gold-glow border-2 border-yellow-600/30 group">
+                    <i class="fab fa-facebook text-4xl text-blue-400 group-hover:scale-125 transition-transform duration-300"></i>
+                </a>
+                <a href="#" class="glass-effect w-20 h-20 rounded-2xl flex items-center justify-center hover-lift gold-glow border-2 border-yellow-600/30 group">
+                    <i class="fab fa-tiktok text-4xl text-white group-hover:scale-125 transition-transform duration-300"></i>
+                </a>
+                <a href="#" class="glass-effect w-20 h-20 rounded-2xl flex items-center justify-center hover-lift gold-glow border-2 border-yellow-600/30 group">
+                    <i class="fab fa-twitter text-4xl text-blue-300 group-hover:scale-125 transition-transform duration-300"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative py-16 mt-20 fade-in-up border-t-2 border-yellow-600/30" style="animation-delay: 1.2s">
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <div class="mb-8">
+                <img src="logo.png" alt="House of Diva Logo" class="w-32 h-32 object-cover rounded-full mx-auto drop-shadow-2xl border-4 border-yellow-500/50" style="filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.5));">
+            </div>
+            <h3 class="text-4xl font-bold text-white mb-2">HOUSE OF <span class="gold-text">DIVA</span></h3>
+            <p class="text-purple-200 mb-4 text-lg italic" style="font-family: 'Playfair Display', serif;">Where Elegance Meets Excellence</p>
+            <p class="text-purple-300">© 2024 House of Diva. All Rights Reserved.</p>
+            <p class="text-purple-400 text-sm mt-2">Crafted with passion and dedication</p>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            el.style.animationPlayState = 'paused';
+            observer.observe(el);
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Create floating particles
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.style.position = 'fixed';
+            particle.style.width = Math.random() * 3 + 1 + 'px';
+            particle.style.height = particle.style.width;
+            particle.style.background = 'rgba(255, 215, 0, 0.5)';
+            particle.style.borderRadius = '50%';
+            particle.style.left = Math.random() * window.innerWidth + 'px';
+            particle.style.top = window.innerHeight + 'px';
+            particle.style.pointerEvents = 'none';
+            particle.style.zIndex = '1';
+            document.body.appendChild(particle);
+
+            const duration = Math.random() * 3000 + 2000;
+            const drift = (Math.random() - 0.5) * 200;
+
+            particle.animate([
+                { transform: 'translateY(0px) translateX(0px)', opacity: 0 },
+                { transform: `translateY(-${window.innerHeight + 100}px) translateX(${drift}px)`, opacity: 0.8 },
+                { opacity: 0 }
+            ], {
+                duration: duration,
+                easing: 'linear'
+            }).onfinish = () => particle.remove();
+        }
+
+        setInterval(createParticle, 500);
+    </script>
+</body>
+</html>
