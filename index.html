@@ -1,508 +1,511 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>House of Diva - Portfolio Premium</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Poppins:wght@300;400;600;700&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: #1a0a2e;
-            background-image: 
-                radial-gradient(circle at 20% 50%, rgba(120, 40, 200, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(200, 60, 150, 0.15) 0%, transparent 50%);
-            background-attachment: fixed;
-        }
-        
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(5deg); }
-        }
-        
-        @keyframes sparkle {
-            0%, 100% { opacity: 0; transform: scale(0); }
-            50% { opacity: 1; transform: scale(1); }
-        }
-        
-        @keyframes shine {
-            0% { background-position: -200% center; }
-            100% { background-position: 200% center; }
-        }
-        
-        @keyframes fadeInUp {
-            from { 
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to { 
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .float-animation {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        .fade-in-up {
-            animation: fadeInUp 1s ease-out forwards;
-            opacity: 0;
-        }
-        
-        .glass-effect {
-            background: rgba(30, 15, 50, 0.6);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 215, 0, 0.2);
-        }
-        
-        .gold-glow {
-            box-shadow: 0 0 40px rgba(255, 215, 0, 0.3), 0 0 80px rgba(255, 215, 0, 0.15);
-        }
-        
-        .shine-effect {
-            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.3), transparent);
-            background-size: 200% 100%;
-            animation: shine 3s infinite;
-        }
-        
-        .hover-lift {
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        
-        .hover-lift:hover {
-            transform: translateY(-15px) scale(1.03);
-            box-shadow: 0 25px 50px rgba(255, 215, 0, 0.4);
-        }
-        
-        .gold-text {
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FFD700 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .purple-gold-gradient {
-            background: linear-gradient(135deg, #4a0e4e 0%, #81007f 50%, #c77dff 100%);
-        }
-        
-        .sparkle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: #FFD700;
-            border-radius: 50%;
-            animation: sparkle 2s infinite;
-        }
-        
-        .ornament {
-            position: absolute;
-            opacity: 0.1;
-            pointer-events: none;
-        }
-        
-        .shop-card {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .shop-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), transparent);
-            transition: left 0.7s;
-        }
-        
-        .shop-card:hover::before {
-            left: 100%;
-        }
-        
-        .crown-icon {
-            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
-        }
-        
-        .diamond-pattern {
-            background-image: 
-                repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 215, 0, 0.03) 10px, rgba(255, 215, 0, 0.03) 20px),
-                repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(255, 215, 0, 0.03) 10px, rgba(255, 215, 0, 0.03) 20px);
-        }
-    </style>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>House Of Diva – Luxury Fashion</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --pd:   #130826;
+      --p1:   #1e0d3a;
+      --p2:   #2e1260;
+      --p3:   #5b2ea8;
+      --p4:   #9b6de0;
+      --p5:   #c8a8f5;
+      --acc:  #e8b4f8;
+      --wh:   #faf8ff;
+      --mu:   #9a80c0;
+      --bd:   rgba(155,109,224,.18);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--pd);color:var(--wh);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;cursor:none}
+    /* Grain */
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9990;opacity:.5}
+    /* Scrollbar */
+    ::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--pd)}::-webkit-scrollbar-thumb{background:var(--p3);border-radius:2px}
+    /* Cursor */
+    #cur{width:8px;height:8px;background:var(--p4);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
+    #cur2{width:30px;height:30px;border:1px solid var(--p4);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);opacity:.45;transition:left .13s ease,top .13s ease}
+    /* Font display */
+    .fd{font-family:'Playfair Display',serif}
+    /* Loader */
+    #loader{position:fixed;inset:0;background:var(--pd);z-index:10000;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .8s}
+    #loader.gone{opacity:0;pointer-events:none}
+    .ld-name{font-family:'Playfair Display',serif;font-size:2.1rem;font-weight:400;letter-spacing:.45em;color:var(--p4);margin-bottom:1.8rem}
+    .ld-bar{width:180px;height:1px;background:rgba(155,109,224,.2)}
+    .ld-fill{height:100%;background:var(--p4);animation:lf 1.6s ease forwards}
+    @keyframes lf{from{width:0}to{width:100%}}
+
+    /* ── NAV ── */
+    nav{position:fixed;top:0;width:100%;z-index:1000;padding:1.5rem 4.5rem;display:flex;align-items:center;justify-content:space-between;transition:all .4s}
+    nav.sc{background:rgba(19,8,38,.93);backdrop-filter:blur(18px);padding-top:.95rem;padding-bottom:.95rem;border-bottom:1px solid var(--bd)}
+    .logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:400;letter-spacing:.22em;color:var(--p4)}
+    .logo span{font-style:italic;color:var(--acc)}
+    .nav-links{display:flex;gap:2.2rem}
+    .nav-links a{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--wh);position:relative;transition:color .3s;cursor:none;text-decoration:none}
+    .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--p4);transition:width .32s}
+    .nav-links a:hover{color:var(--p4)}.nav-links a:hover::after{width:100%}
+    .nav-cta{background:var(--p3);color:var(--wh);border:none;padding:.52rem 1.4rem;font-size:.63rem;letter-spacing:.18em;text-transform:uppercase;font-family:'DM Sans',sans-serif;font-weight:500;cursor:none;transition:all .32s;border-radius:2px;display:flex;align-items:center;gap:.5rem;text-decoration:none}
+    .nav-cta:hover{background:var(--p4);color:var(--pd)}
+
+    /* ── HERO ── */
+    .hero{min-height:100vh;position:relative;overflow:hidden;display:flex;align-items:center;background:linear-gradient(135deg,var(--pd) 0%,var(--p1) 55%,#220f50 100%)}
+    .blob{position:absolute;border-radius:50%;filter:blur(85px);pointer-events:none}
+    .b1{width:480px;height:480px;background:rgba(91,46,168,.22);top:-110px;right:-90px}
+    .b2{width:320px;height:320px;background:rgba(232,180,248,.09);bottom:-70px;left:-50px}
+    .b3{width:220px;height:220px;background:rgba(46,18,96,.4);top:40%;right:22%}
+    .hero-right{position:absolute;right:0;top:0;bottom:0;width:46%;clip-path:polygon(9% 0,100% 0,100% 100%,0 100%);background:linear-gradient(155deg,#200d48 0%,#130826 100%);overflow:hidden;display:flex;align-items:center;justify-content:center}
+    .hero-content{position:relative;z-index:2;padding:0 4.5rem;max-width:580px}
+    .h-tag{font-size:.6rem;letter-spacing:.36em;text-transform:uppercase;color:var(--acc);margin-bottom:1.3rem;display:flex;align-items:center;gap:.85rem}
+    .h-tag::before{content:'';width:34px;height:1px;background:var(--acc)}
+    .h1{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,6vw,4.8rem);font-weight:600;line-height:1.1;color:var(--wh)}
+    .h1 em{color:var(--acc);font-style:italic}
+    .h-p{font-size:.78rem;line-height:1.95;color:var(--mu);margin:1.5rem 0 2.2rem;max-width:370px}
+    .h-btns{display:flex;gap:.9rem;flex-wrap:wrap}
+    .btn-p{display:inline-flex;align-items:center;gap:.6rem;background:var(--p3);color:var(--wh);padding:.88rem 2.2rem;font-size:.63rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;cursor:none;transition:all .32s;border-radius:2px;text-decoration:none;border:none;font-family:'DM Sans',sans-serif}
+    .btn-p:hover{background:var(--p4);color:var(--pd);transform:translateY(-2px)}
+    .btn-g{display:inline-flex;align-items:center;gap:.6rem;border:1px solid var(--bd);color:var(--p4);padding:.88rem 2.2rem;font-size:.63rem;letter-spacing:.2em;text-transform:uppercase;cursor:none;transition:all .32s;border-radius:2px;text-decoration:none;background:transparent;font-family:'DM Sans',sans-serif}
+    .btn-g:hover{border-color:var(--p4);background:rgba(91,46,168,.12)}
+    .h-stats{display:flex;gap:2.8rem;margin-top:3rem}
+    .sn{font-family:'Playfair Display',serif;font-size:2rem;font-weight:600;color:var(--p4);line-height:1}
+    .sl{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mu);margin-top:.28rem}
+    .scroll-cue{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.45rem;font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;color:var(--mu)}
+    .sc-line{width:1px;height:42px;background:linear-gradient(to bottom,var(--p4),transparent);animation:sc 2s ease-in-out infinite}
+    @keyframes sc{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+    /* ── MARQUEE ── */
+    .mq{background:var(--p3);overflow:hidden;padding:.8rem 0}
+    .mq-in{display:flex;white-space:nowrap;animation:mq 26s linear infinite}
+    .mq-in span{font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;color:var(--wh);padding:0 1.8rem;font-weight:500}
+    .mq-in .sep{opacity:.3}
+    @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+    /* ── SECTION SHARED ── */
+    section{padding:5.5rem 4.5rem}
+    .s-lbl{font-size:.58rem;letter-spacing:.36em;text-transform:uppercase;color:var(--acc);margin-bottom:.85rem;display:flex;align-items:center;gap:.85rem}
+    .s-lbl::before{content:'';width:26px;height:1px;background:var(--acc)}
+    .s-h{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:600;line-height:1.2;color:var(--wh)}
+    .s-h em{color:var(--acc);font-style:italic}
+
+    /* ── CATEGORY ── */
+    .cat-sec{background:rgba(46,18,96,.2)}
+    .cat-g{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:2.8rem}
+    .cat-c{position:relative;overflow:hidden;cursor:none;border-radius:6px;border:1px solid var(--bd);transition:border-color .38s}
+    .cat-c:hover{border-color:var(--p4)}
+    .cat-b{padding:2.2rem 1.5rem;display:flex;flex-direction:column;align-items:center;background:rgba(46,18,96,.35);transition:background .38s}
+    .cat-c:hover .cat-b{background:rgba(91,46,168,.3)}
+    .cat-i{width:60px;height:60px;border-radius:50%;background:rgba(91,46,168,.22);border:1px solid var(--bd);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.1rem;transition:all .38s}
+    .cat-c:hover .cat-i{background:rgba(91,46,168,.48);border-color:var(--p4)}
+    .cat-n{font-family:'Playfair Display',serif;font-size:1rem;font-weight:400;color:var(--wh);margin-bottom:.28rem}
+    .cat-k{font-size:.6rem;letter-spacing:.14em;color:var(--mu)}
+
+    /* ── PRODUCTS ── */
+    .prod-sec{background:rgba(19,8,38,.6)}
+    .prod-hd{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2.2rem}
+    .f-row{display:flex;gap:.55rem;flex-wrap:wrap;margin-bottom:2.5rem}
+    .fb{background:transparent;border:1px solid var(--bd);color:var(--mu);padding:.48rem 1.3rem;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;cursor:none;transition:all .28s;font-family:'DM Sans',sans-serif;border-radius:2px}
+    .fb.on,.fb:hover{background:var(--p3);color:var(--wh);border-color:var(--p3)}
+    .pg{display:grid;grid-template-columns:repeat(4,1fr);gap:1.8rem}
+    .pc{position:relative;cursor:none;border-radius:6px;overflow:hidden;background:rgba(19,8,38,.8);border:1px solid var(--bd);transition:border-color .38s,transform .38s}
+    .pc:hover{border-color:var(--p4);transform:translateY(-4px)}
+    .pi{position:relative;aspect-ratio:3/4;overflow:hidden}
+    .pi-in{width:100%;height:100%;transition:transform .65s cubic-bezier(.25,.46,.45,.94)}
+    .pc:hover .pi-in{transform:scale(1.07)}
+    .pbdg{position:absolute;top:.85rem;left:.85rem;background:var(--p3);color:var(--wh);font-size:.5rem;letter-spacing:.16em;text-transform:uppercase;padding:.26rem .7rem;border-radius:2px;font-weight:500;z-index:2}
+    .pshop{position:absolute;bottom:0;left:0;right:0;background:rgba(19,8,38,.92);padding:.8rem;display:flex;align-items:center;justify-content:center;gap:.55rem;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--wh);transform:translateY(100%);transition:transform .35s ease;font-weight:500;text-decoration:none;border-top:1px solid var(--bd)}
+    .pc:hover .pshop{transform:translateY(0)}
+    .pshop:hover{background:var(--p3)}
+    .pinfo{padding:1rem 1.1rem 1.3rem}
+    .pcat{font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:var(--acc);margin-bottom:.28rem}
+    .pn{font-family:'Playfair Display',serif;font-size:.98rem;font-weight:400;color:var(--wh);margin-bottom:.4rem}
+    .pp{font-size:.75rem;color:var(--mu);display:flex;align-items:center;gap:.65rem}
+    .pp .ori{text-decoration:line-through;font-size:.65rem}
+    .pp .sale{color:var(--p4);font-weight:500}
+
+    /* ── PROMO ── */
+    .promo{background:linear-gradient(135deg,var(--p1),#30145e);position:relative;overflow:hidden}
+    .promo::before{content:'DIVA';position:absolute;font-family:'Playfair Display',serif;font-size:18rem;font-weight:700;color:rgba(155,109,224,.04);right:-3rem;top:50%;transform:translateY(-50%);pointer-events:none;white-space:nowrap;line-height:1}
+    .promo-g{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center;position:relative;z-index:2}
+    .pbig{font-family:'Playfair Display',serif;font-size:7.5rem;font-weight:700;color:var(--p4);line-height:1}
+    .pbig sup{font-size:2.3rem;vertical-align:super}
+    .t-row{display:flex;gap:1.8rem;margin-top:1.8rem}
+    .tb{text-align:center}
+    .tnum{font-family:'Playfair Display',serif;font-size:2rem;color:var(--p4);line-height:1}
+    .tunit{font-size:.53rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mu);margin-top:.28rem}
+    .tsep{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--bd);align-self:center}
+
+    /* ── WHY ── */
+    .why{background:rgba(46,18,96,.2)}
+    .why-g{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:2.8rem}
+    .wc{text-align:center;padding:2rem 1.4rem;border:1px solid var(--bd);border-radius:6px;transition:border-color .38s,transform .38s;background:rgba(19,8,38,.5)}
+    .wc:hover{border-color:var(--p4);transform:translateY(-4px)}
+    .wi{width:50px;height:50px;border-radius:50%;background:rgba(91,46,168,.2);border:1px solid var(--bd);display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin:0 auto 1.1rem;transition:all .38s}
+    .wc:hover .wi{background:rgba(91,46,168,.45);border-color:var(--p4)}
+    .wt{font-family:'Playfair Display',serif;font-size:.98rem;color:var(--wh);margin-bottom:.45rem}
+    .wd{font-size:.7rem;line-height:1.85;color:var(--mu)}
+
+    /* ── TESTI ── */
+    .testi{background:var(--pd)}
+    .tg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2.8rem}
+    .tc{border:1px solid var(--bd);padding:2rem;border-radius:6px;background:rgba(46,18,96,.25);transition:border-color .38s,background .38s}
+    .tc:hover{border-color:var(--p4);background:rgba(91,46,168,.15)}
+    .tq{font-family:'Playfair Display',serif;font-size:3.2rem;color:var(--acc);opacity:.38;line-height:1;margin-bottom:-.5rem}
+    .ts{color:var(--acc);font-size:.7rem;letter-spacing:.1em;margin-bottom:.65rem}
+    .tt{font-size:.76rem;line-height:1.9;color:var(--mu);font-style:italic;margin-bottom:1.4rem}
+    .ta{font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:var(--wh)}
+    .tr{font-size:.58rem;color:var(--mu);margin-top:.18rem}
+
+    /* ── NEWSLETTER ── */
+    .nl{background:var(--p1);text-align:center;position:relative;overflow:hidden}
+    .nl::before,.nl::after{content:'';position:absolute;border-radius:50%;border:1px solid var(--bd)}
+    .nl::before{width:520px;height:520px;top:-260px;left:-260px}
+    .nl::after{width:380px;height:380px;bottom:-190px;right:-190px}
+    .nl-form{display:flex;justify-content:center;margin-top:2rem;max-width:440px;margin-left:auto;margin-right:auto;position:relative;z-index:2}
+    .nl-in{flex:1;background:rgba(255,255,255,.05);border:1px solid var(--bd);border-right:none;color:var(--wh);padding:.9rem 1.3rem;font-size:.73rem;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .3s;border-radius:2px 0 0 2px}
+    .nl-in::placeholder{color:var(--mu)}
+    .nl-in:focus{border-color:var(--p4)}
+    .nl-btn{background:var(--p3);color:var(--wh);border:none;padding:.9rem 1.6rem;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;cursor:none;transition:all .3s;font-family:'DM Sans',sans-serif;border-radius:0 2px 2px 0}
+    .nl-btn:hover{background:var(--p4);color:var(--pd)}
+
+    /* ── FOOTER ── */
+    footer{background:var(--pd);border-top:1px solid var(--bd);padding:4.5rem 4.5rem 2rem}
+    .ftg{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:3.5rem;margin-bottom:3.5rem}
+    .ft-logo{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:400;color:var(--p4);letter-spacing:.2em;margin-bottom:.9rem}
+    .ft-desc{font-size:.7rem;line-height:1.9;color:var(--mu);margin-bottom:1.6rem}
+    .ft-socs{display:flex;gap:.7rem}
+    .ft-soc{width:32px;height:32px;border:1px solid var(--bd);display:flex;align-items:center;justify-content:center;color:var(--mu);font-size:.68rem;transition:all .3s;cursor:none;border-radius:2px;text-decoration:none}
+    .ft-soc:hover{border-color:var(--p4);color:var(--p4)}
+    .ft-h{font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;color:var(--acc);margin-bottom:1.2rem}
+    .ft-ul{list-style:none}
+    .ft-ul li{margin-bottom:.6rem}
+    .ft-ul a{font-size:.7rem;color:var(--mu);transition:color .3s;cursor:none;text-decoration:none}
+    .ft-ul a:hover{color:var(--wh)}
+    .ft-bt{border-top:1px solid var(--bd);padding-top:1.6rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+    .ft-copy{font-size:.6rem;color:var(--mu);letter-spacing:.07em}
+    .pays{display:flex;gap:.5rem;flex-wrap:wrap}
+    .pay{background:rgba(155,109,224,.06);border:1px solid var(--bd);padding:.26rem .6rem;font-size:.56rem;letter-spacing:.08em;color:var(--mu);border-radius:2px}
+
+    /* ── TOAST ── */
+    .toast{position:fixed;bottom:1.8rem;right:1.8rem;z-index:3000;background:var(--p1);border:1px solid var(--p3);padding:.85rem 1.3rem;display:flex;align-items:center;gap:.75rem;transform:translateX(130%);transition:transform .4s ease;border-radius:4px;min-width:250px}
+    .toast.on{transform:translateX(0)}
+    .t-ico{color:var(--acc);font-size:.85rem}
+    .t-msg{font-size:.7rem;color:var(--wh)}
+
+    /* Responsive */
+    @media(max-width:1100px){.pg{grid-template-columns:repeat(2,1fr)}.cat-g{grid-template-columns:repeat(2,1fr)}.ftg{grid-template-columns:1fr 1fr;gap:2.2rem}nav{padding:1.3rem 2rem}section{padding:4.5rem 2rem}.hero-content{padding:0 2rem}}
+    @media(max-width:768px){.nav-links{display:none}.hero-right{display:none}.pg{grid-template-columns:1fr}.tg{grid-template-columns:1fr}.why-g{grid-template-columns:1fr 1fr}.ftg{grid-template-columns:1fr}.promo-g{grid-template-columns:1fr}}
+  </style>
 </head>
-<body class="overflow-x-hidden">
-    <!-- Decorative Ornaments -->
-    <div class="ornament top-0 left-0 w-64 h-64">
-        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-            <path fill="#FFD700" d="M45.4,-56.8C58.5,-45.5,68.5,-31.4,73.1,-15.4C77.7,0.6,76.9,18.5,69.3,33.1C61.7,47.7,47.3,58.9,31.3,64.8C15.3,70.7,-2.3,71.3,-18.9,66.7C-35.5,62.1,-51,52.3,-61.1,38.4C-71.2,24.5,-75.9,6.5,-73.4,-10.6C-70.9,-27.7,-61.2,-43.9,-47.8,-55C-34.4,-66.1,-17.2,-72.1,-0.3,-71.7C16.6,-71.3,33.2,-64.5,45.4,-56.8Z" transform="translate(100 100)" />
-        </svg>
+<body>
+
+<div id="loader"><div class="ld-name">HOUSE OF DIVA</div><div class="ld-bar"><div class="ld-fill"></div></div></div>
+<div id="cur"></div><div id="cur2"></div>
+<div class="toast" id="toast"><span class="t-ico">✦</span><span class="t-msg" id="tmsg"></span></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="logo">HOUSE <span>of</span> DIVA</div>
+  <div class="nav-links">
+    <a href="#kategori">Kategori</a>
+    <a href="#produk">Produk</a>
+    <a href="#promo">Promo</a>
+    <a href="#ulasan">Ulasan</a>
+  </div>
+  <a href="https://shopee.co.id/houseofdiva" target="_blank" rel="noopener" class="nav-cta">🛍 Beli di Shopee</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="hero-right">
+    <svg width="400" height="580" viewBox="0 0 400 580" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#7c3fc8;stop-opacity:.2"/><stop offset="100%" style="stop-color:#c8a8f5;stop-opacity:.07"/></linearGradient>
+        <linearGradient id="g2" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#e8b4f8;stop-opacity:.2"/><stop offset="100%" style="stop-color:#5b2ea8;stop-opacity:.08"/></linearGradient>
+      </defs>
+      <circle cx="200" cy="108" r="58" fill="url(#g1)" stroke="rgba(184,140,244,.22)" stroke-width="1"/>
+      <path d="M165 85 Q158 52 180 36 Q200 22 220 36 Q242 52 235 85 Q218 68 200 66 Q182 68 165 85 Z" fill="rgba(184,140,244,.14)" stroke="rgba(184,140,244,.24)" stroke-width="1"/>
+      <rect x="192" y="162" width="16" height="24" rx="3" fill="rgba(184,140,244,.12)"/>
+      <path d="M148 200 Q128 220 126 276 L118 360 L164 360 L180 292 L200 302 L220 292 L236 360 L282 360 L274 276 Q272 220 252 200 Q232 187 200 185 Q168 187 148 200 Z" fill="url(#g2)" stroke="rgba(184,140,244,.2)" stroke-width="1"/>
+      <path d="M148 200 Q116 224 105 296 L118 300 Q130 240 158 218 Z" fill="rgba(184,140,244,.09)" stroke="rgba(184,140,244,.16)" stroke-width="1"/>
+      <path d="M252 200 Q284 224 295 296 L282 300 Q270 240 242 218 Z" fill="rgba(184,140,244,.09)" stroke="rgba(184,140,244,.16)" stroke-width="1"/>
+      <path d="M118 360 Q88 440 72 560 L328 560 Q312 440 282 360 Z" fill="rgba(91,46,168,.1)" stroke="rgba(184,140,244,.14)" stroke-width="1"/>
+      <path d="M178 210 Q200 205 222 210" fill="none" stroke="rgba(232,180,248,.28)" stroke-width="1"/>
+      <path d="M168 238 Q200 232 232 238" fill="none" stroke="rgba(232,180,248,.16)" stroke-width="1"/>
+      <path d="M158 270 Q200 263 242 270 Q242 282 200 285 Q158 282 158 270 Z" fill="rgba(184,140,244,.14)" stroke="rgba(184,140,244,.28)" stroke-width="1"/>
+      <circle cx="200" cy="300" r="135" fill="none" stroke="rgba(184,140,244,.05)" stroke-width="1"/>
+      <circle cx="200" cy="300" r="190" fill="none" stroke="rgba(184,140,244,.03)" stroke-width="1"/>
+      <text x="78" y="150" font-size="9" fill="rgba(232,180,248,.32)">✦</text>
+      <text x="308" y="120" font-size="7" fill="rgba(232,180,248,.22)">✦</text>
+      <text x="325" y="288" font-size="5.5" fill="rgba(232,180,248,.18)">✦</text>
+      <text x="62" y="306" font-size="6.5" fill="rgba(232,180,248,.18)">✦</text>
+    </svg>
+  </div>
+
+  <div class="hero-content">
+    <div class="h-tag" data-aos="fade-right" data-aos-delay="200">Koleksi Premium 2025</div>
+    <h1 class="h1" data-aos="fade-up" data-aos-delay="340">
+      Elegan &amp;<br/><em>Percaya Diri</em><br/>Setiap Hari
+    </h1>
+    <p class="h-p" data-aos="fade-up" data-aos-delay="470">
+      Fashion premium untuk wanita Indonesia yang menghargai keindahan, kualitas, dan keanggunan dalam setiap detail busana.
+    </p>
+    <div class="h-btns" data-aos="fade-up" data-aos-delay="590">
+      <a href="https://shopee.co.id/houseofdiva" target="_blank" rel="noopener" class="btn-p">🛍 Belanja di Shopee</a>
+      <a href="#produk" class="btn-g">Lihat Koleksi ↓</a>
     </div>
-    
-    <!-- Header -->
-    <header class="relative py-16 overflow-hidden fade-in-up">
-        <div class="container mx-auto px-4 text-center relative z-10">
-            <!-- Logo -->
-            <div class="mb-8 flex justify-center">
-                <div class="relative float-animation">
-                    <img src="logo.png" alt="House of Diva Logo" class="w-64 h-64 object-cover rounded-full drop-shadow-2xl border-4 border-yellow-500/50" style="filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.5));">
-                    <div class="sparkle" style="top: 10%; left: 20%; animation-delay: 0s;"></div>
-                    <div class="sparkle" style="top: 30%; right: 15%; animation-delay: 0.5s;"></div>
-                    <div class="sparkle" style="bottom: 20%; left: 25%; animation-delay: 1s;"></div>
-                    <div class="sparkle" style="bottom: 15%; right: 20%; animation-delay: 1.5s;"></div>
-                </div>
-            </div>
-            
-            <h1 class="text-6xl md:text-7xl font-bold mb-3 text-white" style="text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);">HOUSE OF</h1>
-            <h1 class="text-7xl md:text-8xl font-bold mb-6 gold-text" style="text-shadow: 0 0 30px rgba(255, 215, 0, 0.7);">DIVA</h1>
-            <p class="text-2xl md:text-3xl text-purple-200 mb-8 italic" style="font-family: 'Playfair Display', serif;">Where Elegance Meets Excellence</p>
-            
-            <div class="flex flex-wrap justify-center gap-4 mb-8">
-                <div class="glass-effect px-8 py-3 rounded-full text-white border-2 border-yellow-600/50">
-                    <i class="fas fa-crown text-yellow-400 mr-2"></i> Premium Quality
-                </div>
-                <div class="glass-effect px-8 py-3 rounded-full text-white border-2 border-yellow-600/50">
-                    <i class="fas fa-star text-yellow-400 mr-2"></i> Trusted Brand
-                </div>
-                <div class="glass-effect px-8 py-3 rounded-full text-white border-2 border-yellow-600/50">
-                    <i class="fas fa-gem text-yellow-400 mr-2"></i> Exclusive Products
-                </div>
-            </div>
-        </div>
-    </header>
+    <div class="h-stats" data-aos="fade-up" data-aos-delay="720">
+      <div><div class="sn">2K+</div><div class="sl">Terjual</div></div>
+      <div><div class="sn">4.9★</div><div class="sl">Rating</div></div>
+      <div><div class="sn">100%</div><div class="sl">Original</div></div>
+    </div>
+  </div>
+  <div class="scroll-cue"><div class="sc-line"></div><span>Scroll</span></div>
+</section>
 
-    <!-- About Section -->
-    <section class="py-20 relative fade-in-up diamond-pattern" style="animation-delay: 0.2s">
-        <div class="container mx-auto px-4 max-w-6xl">
-            <div class="glass-effect p-12 md:p-16 rounded-3xl gold-glow border-2 border-yellow-600/30">
-                <div class="text-center mb-8">
-                    <i class="fas fa-crown text-6xl text-yellow-400 crown-icon mb-4"></i>
-                    <h2 class="text-5xl md:text-6xl font-bold mb-6 gold-text">About Us</h2>
-                </div>
-                <p class="text-xl md:text-2xl text-purple-100 text-center leading-relaxed mb-8" style="font-family: 'Playfair Display', serif;">
-                    House of Diva adalah destinasi belanja premium yang menghadirkan koleksi produk berkualitas tinggi dengan sentuhan kemewahan. 
-                    Kami berkomitmen untuk memberikan pengalaman berbelanja yang istimewa dengan produk pilihan terbaik yang telah dipercaya oleh ribuan pelanggan setia di seluruh Indonesia.
-                </p>
-                
-                <div class="grid md:grid-cols-4 gap-6 mt-12">
-                    <div class="text-center glass-effect p-6 rounded-2xl border border-yellow-600/20">
-                        <div class="text-5xl font-bold gold-text mb-2">15K+</div>
-                        <div class="text-purple-200 text-sm uppercase tracking-wider">Produk Terjual</div>
-                    </div>
-                    <div class="text-center glass-effect p-6 rounded-2xl border border-yellow-600/20">
-                        <div class="text-5xl font-bold gold-text mb-2">4.9</div>
-                        <div class="text-purple-200 text-sm uppercase tracking-wider">Rating</div>
-                    </div>
-                    <div class="text-center glass-effect p-6 rounded-2xl border border-yellow-600/20">
-                        <div class="text-5xl font-bold gold-text mb-2">99%</div>
-                        <div class="text-purple-200 text-sm uppercase tracking-wider">Kepuasan</div>
-                    </div>
-                    <div class="text-center glass-effect p-6 rounded-2xl border border-yellow-600/20">
-                        <div class="text-5xl font-bold gold-text mb-2">24/7</div>
-                        <div class="text-purple-200 text-sm uppercase tracking-wider">Support</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- MARQUEE -->
+<div class="mq"><div class="mq-in" id="mqIn"></div></div>
 
-    <!-- Marketplace Links -->
-    <section class="py-20 relative fade-in-up" style="animation-delay: 0.4s">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <i class="fas fa-shopping-bag text-5xl text-yellow-400 crown-icon mb-4"></i>
-                <h2 class="text-5xl md:text-6xl font-bold mb-4 gold-text">Visit Our Store</h2>
-                <p class="text-purple-200 text-xl md:text-2xl" style="font-family: 'Playfair Display', serif;">Belanja mudah di platform favorit Anda</p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- Shopee -->
-                <a href="https://shopee.co.id/vall.dev?originalCategoryId=11043151#product_list" target="_blank" class="shop-card glass-effect p-10 rounded-3xl hover-lift gold-glow border-2 border-yellow-600/30 group">
-                    <div class="bg-gradient-to-br from-orange-500 to-orange-600 w-28 h-28 rounded-3xl flex items-center justify-center mb-6 mx-auto transform group-hover:rotate-12 transition-transform duration-500 shadow-2xl">
-                        <i class="fab fa-shopify text-white text-6xl"></i>
-                    </div>
-                    <h3 class="text-3xl font-bold text-white mb-3 text-center">Shopee</h3>
-                    <p class="text-purple-200 text-center mb-6 leading-relaxed">Belanja hemat dengan gratis ongkir & cashback menarik setiap hari</p>
-                    <div class="text-center">
-                        <span class="inline-block bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-3 rounded-full text-sm font-bold uppercase tracking-wider shadow-lg">
-                            Kunjungi Toko <i class="fas fa-arrow-right ml-2"></i>
-                        </span>
-                    </div>
-                </a>
+<!-- KATEGORI -->
+<section id="kategori" class="cat-sec">
+  <div style="text-align:center" data-aos="fade-up">
+    <div class="s-lbl" style="justify-content:center">Belanja Berdasarkan</div>
+    <h2 class="s-h">Jelajahi <em>Kategori</em></h2>
+  </div>
+  <div class="cat-g">
+    <div class="cat-c" data-aos="fade-up" data-aos-delay="80"><div class="cat-b"><div class="cat-i">👗</div><div class="cat-n">Dress & Gaun</div><div class="cat-k">48 Produk</div></div></div>
+    <div class="cat-c" data-aos="fade-up" data-aos-delay="160"><div class="cat-b"><div class="cat-i">🧥</div><div class="cat-n">Outerwear</div><div class="cat-k">32 Produk</div></div></div>
+    <div class="cat-c" data-aos="fade-up" data-aos-delay="240"><div class="cat-b"><div class="cat-i">👜</div><div class="cat-n">Tas & Clutch</div><div class="cat-k">26 Produk</div></div></div>
+    <div class="cat-c" data-aos="fade-up" data-aos-delay="320"><div class="cat-b"><div class="cat-i">💎</div><div class="cat-n">Aksesoris</div><div class="cat-k">61 Produk</div></div></div>
+  </div>
+</section>
 
-                <!-- Tokopedia -->
-                <a href="https://www.tokopedia.com/lumiskin-hb" target="_blank" class="shop-card glass-effect p-10 rounded-3xl hover-lift gold-glow border-2 border-yellow-600/30 group">
-                    <div class="bg-gradient-to-br from-green-500 to-green-600 w-28 h-28 rounded-3xl flex items-center justify-center mb-6 mx-auto transform group-hover:rotate-12 transition-transform duration-500 shadow-2xl">
-                        <i class="fas fa-shopping-bag text-white text-6xl"></i>
-                    </div>
-                    <h3 class="text-3xl font-bold text-white mb-3 text-center">Tokopedia</h3>
-                    <p class="text-purple-200 text-center mb-6 leading-relaxed">Produk original dengan garansi terpercaya dan sistem pembayaran aman</p>
-                    <div class="text-center">
-                        <span class="inline-block bg-gradient-to-r from-green-500 to-green-600 text-white px-8 py-3 rounded-full text-sm font-bold uppercase tracking-wider shadow-lg">
-                            Kunjungi Toko <i class="fas fa-arrow-right ml-2"></i>
-                        </span>
-                    </div>
-                </a>
+<!-- PRODUK -->
+<section id="produk" class="prod-sec">
+  <div class="prod-hd">
+    <div>
+      <div class="s-lbl" data-aos="fade-right">Koleksi Kami</div>
+      <h2 class="s-h" data-aos="fade-up" data-aos-delay="80">Produk <em>Terbaru</em></h2>
+    </div>
+    <a href="https://shopee.co.id/houseofdiva" target="_blank" rel="noopener" class="btn-g" data-aos="fade-left" style="font-size:.58rem">Semua di Shopee →</a>
+  </div>
+  <div class="f-row" data-aos="fade-up">
+    <button class="fb on" onclick="fltr('all',this)">Semua</button>
+    <button class="fb" onclick="fltr('dress',this)">Dress</button>
+    <button class="fb" onclick="fltr('outerwear',this)">Outerwear</button>
+    <button class="fb" onclick="fltr('tas',this)">Tas</button>
+    <button class="fb" onclick="fltr('aksesoris',this)">Aksesoris</button>
+  </div>
+  <div class="pg" id="pg"></div>
+</section>
 
-                <!-- WhatsApp -->
-                <a href="https://wa.me/6285100137595" target="_blank" class="shop-card glass-effect p-10 rounded-3xl hover-lift gold-glow border-2 border-yellow-600/30 group">
-                    <div class="bg-gradient-to-br from-green-400 to-green-500 w-28 h-28 rounded-3xl flex items-center justify-center mb-6 mx-auto transform group-hover:rotate-12 transition-transform duration-500 shadow-2xl">
-                        <i class="fab fa-whatsapp text-white text-6xl"></i>
-                    </div>
-                    <h3 class="text-3xl font-bold text-white mb-3 text-center">WhatsApp</h3>
-                    <p class="text-purple-200 text-center mb-6 leading-relaxed">Chat langsung untuk konsultasi produk & order dengan respon cepat</p>
-                    <div class="text-center">
-                        <span class="inline-block bg-gradient-to-r from-green-400 to-green-500 text-white px-8 py-3 rounded-full text-sm font-bold uppercase tracking-wider shadow-lg">
-                            Chat Sekarang <i class="fas fa-arrow-right ml-2"></i>
-                        </span>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
+<!-- PROMO -->
+<section id="promo" class="promo">
+  <div class="promo-g">
+    <div data-aos="fade-right">
+      <div class="s-lbl">Penawaran Terbatas</div>
+      <h2 class="s-h" style="margin-bottom:1.3rem">Flash Sale<br/><em>Hari Ini</em></h2>
+      <p style="font-size:.76rem;color:var(--mu);line-height:1.95;max-width:360px;margin-bottom:2rem">Diskon hingga 40% untuk koleksi pilihan. Segera kunjungi toko kami di Shopee sebelum kehabisan!</p>
+      <a href="https://shopee.co.id/houseofdiva" target="_blank" rel="noopener" class="btn-p">🛍 Klaim Diskon di Shopee</a>
+    </div>
+    <div data-aos="fade-left" data-aos-delay="200" style="text-align:center">
+      <div class="pbig"><sup>UP TO</sup>40<sup>%</sup></div>
+      <div style="font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;color:var(--mu);margin-top:.45rem">Diskon Member Baru</div>
+      <div class="t-row" style="justify-content:center">
+        <div class="tb"><div class="tnum" id="tH">08</div><div class="tunit">Jam</div></div>
+        <div class="tsep">:</div>
+        <div class="tb"><div class="tnum" id="tM">24</div><div class="tunit">Menit</div></div>
+        <div class="tsep">:</div>
+        <div class="tb"><div class="tnum" id="tS">00</div><div class="tunit">Detik</div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Features -->
-    <section class="py-20 relative fade-in-up diamond-pattern" style="animation-delay: 0.6s">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <i class="fas fa-award text-5xl text-yellow-400 crown-icon mb-4"></i>
-                <h2 class="text-5xl md:text-6xl font-bold mb-4 gold-text">Why Choose Us</h2>
-                <p class="text-purple-200 text-xl md:text-2xl" style="font-family: 'Playfair Display', serif;">Keunggulan yang membuat kami berbeda</p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-                <div class="glass-effect p-10 rounded-3xl text-center hover-lift gold-glow border-2 border-yellow-600/30">
-                    <div class="bg-gradient-to-br from-yellow-500 to-yellow-600 w-24 h-24 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-2xl">
-                        <i class="fas fa-shield-alt text-white text-5xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 gold-text">100% Terpercaya</h3>
-                    <p class="text-purple-200 leading-relaxed">Produk original bersertifikat dengan garansi uang kembali 100%</p>
-                </div>
-                
-                <div class="glass-effect p-10 rounded-3xl text-center hover-lift gold-glow border-2 border-yellow-600/30">
-                    <div class="bg-gradient-to-br from-yellow-500 to-yellow-600 w-24 h-24 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-2xl">
-                        <i class="fas fa-shipping-fast text-white text-5xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 gold-text">Pengiriman Express</h3>
-                    <p class="text-purple-200 leading-relaxed">Same day delivery untuk area tertentu dengan packing ekstra aman</p>
-                </div>
-                
-                <div class="glass-effect p-10 rounded-3xl text-center hover-lift gold-glow border-2 border-yellow-600/30">
-                    <div class="bg-gradient-to-br from-yellow-500 to-yellow-600 w-24 h-24 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-2xl">
-                        <i class="fas fa-crown text-white text-5xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 gold-text">Kualitas Premium</h3>
-                    <p class="text-purple-200 leading-relaxed">Produk pilihan berkualitas tinggi dengan standar internasional</p>
-                </div>
-                
-                <div class="glass-effect p-10 rounded-3xl text-center hover-lift gold-glow border-2 border-yellow-600/30">
-                    <div class="bg-gradient-to-br from-yellow-500 to-yellow-600 w-24 h-24 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-2xl">
-                        <i class="fas fa-headset text-white text-5xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 gold-text">Layanan 24/7</h3>
-                    <p class="text-purple-200 leading-relaxed">Customer service profesional siap membantu kapan saja Anda butuhkan</p>
-                </div>
-                
-                <div class="glass-effect p-10 rounded-3xl text-center hover-lift gold-glow border-2 border-yellow-600/30">
-                    <div class="bg-gradient-to-br from-yellow-500 to-yellow-600 w-24 h-24 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-2xl">
-                        <i class="fas fa-gift text-white text-5xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 gold-text">Bonus Eksklusif</h3>
-                    <p class="text-purple-200 leading-relaxed">Dapatkan promo spesial dan bonus menarik untuk setiap pembelian</p>
-                </div>
-                
-                <div class="glass-effect p-10 rounded-3xl text-center hover-lift gold-glow border-2 border-yellow-600/30">
-                    <div class="bg-gradient-to-br from-yellow-500 to-yellow-600 w-24 h-24 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-2xl">
-                        <i class="fas fa-sync-alt text-white text-5xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 gold-text">Easy Return</h3>
-                    <p class="text-purple-200 leading-relaxed">Proses retur dan tukar barang yang mudah, cepat dan tanpa ribet</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- WHY US -->
+<section class="why">
+  <div style="text-align:center" data-aos="fade-up">
+    <div class="s-lbl" style="justify-content:center">Keunggulan</div>
+    <h2 class="s-h">Mengapa <em>House Of Diva?</em></h2>
+  </div>
+  <div class="why-g">
+    <div class="wc" data-aos="fade-up" data-aos-delay="80"><div class="wi">✦</div><div class="wt">Kualitas Premium</div><p class="wd">Setiap produk dipilih dengan standar ketat dan bahan berkualitas tinggi.</p></div>
+    <div class="wc" data-aos="fade-up" data-aos-delay="160"><div class="wi">🚀</div><div class="wt">Pengiriman Cepat</div><p class="wd">Dikemas cantik dan dikirim cepat ke seluruh wilayah Indonesia.</p></div>
+    <div class="wc" data-aos="fade-up" data-aos-delay="240"><div class="wi">💜</div><div class="wt">Desain Eksklusif</div><p class="wd">Koleksi unik yang dirancang khusus untuk Diva sejati Indonesia.</p></div>
+    <div class="wc" data-aos="fade-up" data-aos-delay="320"><div class="wi">🔄</div><div class="wt">Garansi Produk</div><p class="wd">Tidak puas? Kebijakan retur kami mudah, cepat, dan transparan.</p></div>
+  </div>
+</section>
 
-    <!-- Testimonials -->
-    <section class="py-20 relative fade-in-up" style="animation-delay: 0.8s">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <i class="fas fa-comments text-5xl text-yellow-400 crown-icon mb-4"></i>
-                <h2 class="text-5xl md:text-6xl font-bold mb-4 gold-text">Customer Reviews</h2>
-                <p class="text-purple-200 text-xl md:text-2xl" style="font-family: 'Playfair Display', serif;">Kepuasan pelanggan adalah prioritas kami</p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-                <div class="glass-effect p-10 rounded-3xl hover-lift gold-glow border-2 border-yellow-600/30">
-                    <div class="flex items-center mb-6">
-                        <div class="bg-gradient-to-br from-yellow-500 to-yellow-600 w-20 h-20 rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg">
-                            A
-                        </div>
-                        <div class="ml-4">
-                            <h4 class="text-white font-bold text-xl">Ani Susanti</h4>
-                            <div class="text-yellow-400 text-lg">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-purple-200 leading-relaxed text-lg">"Produknya benar-benar premium dan original! Pengiriman super cepat dan packing sangat rapi. House of Diva memang the best!"</p>
-                </div>
-                
-                <div class="glass-effect p-10 rounded-3xl hover-lift gold-glow border-2 border-yellow-600/30">
-                    <div class="flex items-center mb-6">
-                        <div class="bg-gradient-to-br from-yellow-500 to-yellow-600 w-20 h-20 rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg">
-                            B
-                        </div>
-                        <div class="ml-4">
-                            <h4 class="text-white font-bold text-xl">Budi Santoso</h4>
-                            <div class="text-yellow-400 text-lg">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-purple-200 leading-relaxed text-lg">"Kualitas produk sesuai ekspektasi bahkan lebih! Harga bersaing dan pelayanan sangat memuaskan. Highly recommended!"</p>
-                </div>
-                
-                <div class="glass-effect p-10 rounded-3xl hover-lift gold-glow border-2 border-yellow-600/30">
-                    <div class="flex items-center mb-6">
-                        <div class="bg-gradient-to-br from-yellow-500 to-yellow-600 w-20 h-20 rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg">
-                            C
-                        </div>
-                        <div class="ml-4">
-                            <h4 class="text-white font-bold text-xl">Citra Dewi</h4>
-                            <div class="text-yellow-400 text-lg">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-purple-200 leading-relaxed text-lg">"Packingnya luar biasa rapi dan aman! Produk sampai dalam kondisi perfect. Ini toko langganan saya sekarang!"</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ULASAN -->
+<section id="ulasan" class="testi">
+  <div style="text-align:center" data-aos="fade-up">
+    <div class="s-lbl" style="justify-content:center">Testimoni</div>
+    <h2 class="s-h">Kata <em>Pelanggan</em></h2>
+  </div>
+  <div class="tg">
+    <div class="tc" data-aos="fade-up" data-aos-delay="100">
+      <div class="tq">"</div><div class="ts">★★★★★</div>
+      <p class="tt">Kualitasnya luar biasa! Gaun yang saya beli terasa premium, bahannya adem dan jahitannya sangat rapi. Pasti order lagi!</p>
+      <div class="ta">Anastasia W.</div><div class="tr">Fashion Blogger · Jakarta</div>
+    </div>
+    <div class="tc" data-aos="fade-up" data-aos-delay="200">
+      <div class="tq">"</div><div class="ts">★★★★★</div>
+      <p class="tt">Sudah 5x order dan tidak pernah kecewa. Pelayanan responsif, packaging cantik, dan produknya selalu sesuai foto.</p>
+      <div class="ta">Clarissa H.</div><div class="tr">Pengusaha · Surabaya</div>
+    </div>
+    <div class="tc" data-aos="fade-up" data-aos-delay="300">
+      <div class="tq">"</div><div class="ts">★★★★★</div>
+      <p class="tt">Desainnya selalu up to date dan elegan. Saya selalu pakai House Of Diva untuk acara penting. Highly recommended!</p>
+      <div class="ta">Devina S.</div><div class="tr">Arsitek · Bandung</div>
+    </div>
+  </div>
+</section>
 
-    <!-- Social Media -->
-    <section class="py-20 relative fade-in-up diamond-pattern" style="animation-delay: 1s">
-        <div class="container mx-auto px-4 text-center">
-            <i class="fas fa-heart text-5xl text-yellow-400 crown-icon mb-4"></i>
-            <h2 class="text-5xl md:text-6xl font-bold mb-4 gold-text">Follow Us</h2>
-            <p class="text-purple-200 mb-12 text-xl md:text-2xl" style="font-family: 'Playfair Display', serif;">Dapatkan update promo & produk terbaru</p>
-            
-            <div class="flex justify-center gap-6 flex-wrap">
-                <a href="#" class="glass-effect w-20 h-20 rounded-2xl flex items-center justify-center hover-lift gold-glow border-2 border-yellow-600/30 group">
-                    <i class="fab fa-instagram text-4xl text-pink-400 group-hover:scale-125 transition-transform duration-300"></i>
-                </a>
-                <a href="#" class="glass-effect w-20 h-20 rounded-2xl flex items-center justify-center hover-lift gold-glow border-2 border-yellow-600/30 group">
-                    <i class="fab fa-facebook text-4xl text-blue-400 group-hover:scale-125 transition-transform duration-300"></i>
-                </a>
-                <a href="#" class="glass-effect w-20 h-20 rounded-2xl flex items-center justify-center hover-lift gold-glow border-2 border-yellow-600/30 group">
-                    <i class="fab fa-tiktok text-4xl text-white group-hover:scale-125 transition-transform duration-300"></i>
-                </a>
-                <a href="#" class="glass-effect w-20 h-20 rounded-2xl flex items-center justify-center hover-lift gold-glow border-2 border-yellow-600/30 group">
-                    <i class="fab fa-twitter text-4xl text-blue-300 group-hover:scale-125 transition-transform duration-300"></i>
-                </a>
-            </div>
-        </div>
-    </section>
+<!-- NEWSLETTER -->
+<section class="nl">
+  <div class="s-lbl" style="justify-content:center;position:relative;z-index:2" data-aos="fade-up">Newsletter</div>
+  <h2 class="s-h" style="text-align:center;position:relative;z-index:2" data-aos="fade-up" data-aos-delay="80">Update <em>Koleksi Terbaru</em></h2>
+  <p style="font-size:.74rem;color:var(--mu);text-align:center;margin-top:.85rem;line-height:1.9;max-width:420px;margin-left:auto;margin-right:auto;position:relative;z-index:2" data-aos="fade-up" data-aos-delay="150">Daftarkan email Anda untuk mendapat notifikasi koleksi terbaru dan promo eksklusif.</p>
+  <div class="nl-form" data-aos="fade-up" data-aos-delay="220">
+    <input type="email" class="nl-in" id="nle" placeholder="Masukkan email Anda…"/>
+    <button class="nl-btn" onclick="sub()">Daftar</button>
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="relative py-16 mt-20 fade-in-up border-t-2 border-yellow-600/30" style="animation-delay: 1.2s">
-        <div class="container mx-auto px-4 text-center relative z-10">
-            <div class="mb-8">
-                <img src="logo.png" alt="House of Diva Logo" class="w-32 h-32 object-cover rounded-full mx-auto drop-shadow-2xl border-4 border-yellow-500/50" style="filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.5));">
-            </div>
-            <h3 class="text-4xl font-bold text-white mb-2">HOUSE OF <span class="gold-text">DIVA</span></h3>
-            <p class="text-purple-200 mb-4 text-lg italic" style="font-family: 'Playfair Display', serif;">Where Elegance Meets Excellence</p>
-            <p class="text-purple-300">© 2026 House of Diva. All Rights Reserved.</p>
-            <p class="text-purple-400 text-sm mt-2">Crafted with passion and dedication</p>
-        </div>
-    </footer>
+<!-- FOOTER -->
+<footer>
+  <div class="ftg">
+    <div data-aos="fade-up">
+      <div class="ft-logo">HOUSE OF DIVA</div>
+      <p class="ft-desc">Fashion premium untuk wanita Indonesia yang percaya diri. Setiap busana merayakan keindahan dan keanggunan yang abadi.</p>
+      <div class="ft-socs">
+        <a href="#" class="ft-soc">ig</a>
+        <a href="#" class="ft-soc">fb</a>
+        <a href="#" class="ft-soc">tt</a>
+        <a href="https://shopee.co.id/houseofdiva" target="_blank" class="ft-soc" style="color:var(--acc)">🛍</a>
+      </div>
+    </div>
+    <div data-aos="fade-up" data-aos-delay="80">
+      <div class="ft-h">Koleksi</div>
+      <ul class="ft-ul">
+        <li><a href="#">Dress & Gaun</a></li><li><a href="#">Outerwear</a></li>
+        <li><a href="#">Tas & Clutch</a></li><li><a href="#">Aksesoris</a></li>
+        <li><a href="#">New Arrivals</a></li><li><a href="#">Sale</a></li>
+      </ul>
+    </div>
+    <div data-aos="fade-up" data-aos-delay="160">
+      <div class="ft-h">Informasi</div>
+      <ul class="ft-ul">
+        <li><a href="#">Tentang Kami</a></li><li><a href="#">Panduan Ukuran</a></li>
+        <li><a href="#">Kebijakan Retur</a></li><li><a href="#">Cara Pemesanan</a></li><li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+    <div data-aos="fade-up" data-aos-delay="240">
+      <div class="ft-h">Hubungi Kami</div>
+      <ul class="ft-ul">
+        <li><a href="#">houseofdiva@gmail.com</a></li>
+        <li><a href="#">+62 821-xxxx-xxxx</a></li>
+        <li><a href="#">Surabaya, Jawa Timur</a></li>
+        <li style="margin-top:.9rem"><a href="https://shopee.co.id/houseofdiva" target="_blank" style="color:var(--acc)">🛍 Toko Shopee Kami →</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bt">
+    <div class="ft-copy">© 2025 House Of Diva. All rights reserved.</div>
+    <div class="pays">
+      <div class="pay">VISA</div><div class="pay">MASTERCARD</div>
+      <div class="pay">GOPAY</div><div class="pay">OVO</div>
+      <div class="pay">DANA</div><div class="pay">QRIS</div>
+    </div>
+  </div>
+</footer>
 
-    <script>
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
+<script>
+// AOS
+AOS.init({duration:820,easing:'ease-out-cubic',once:true,offset:65});
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animationPlayState = 'running';
-                }
-            });
-        }, observerOptions);
+// Loader
+window.addEventListener('load',()=>setTimeout(()=>document.getElementById('loader').classList.add('gone'),1650));
 
-        document.querySelectorAll('.fade-in-up').forEach(el => {
-            el.style.animationPlayState = 'paused';
-            observer.observe(el);
-        });
+// Cursor
+const c=document.getElementById('cur'),c2=document.getElementById('cur2');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;c.style.left=mx+'px';c.style.top=my+'px';});
+(function loop(){rx+=(mx-rx)*.13;ry+=(my-ry)*.13;c2.style.left=rx+'px';c2.style.top=ry+'px';requestAnimationFrame(loop);})();
 
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
+// Nav scroll
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('sc',scrollY>55));
 
-        // Create floating particles
-        function createParticle() {
-            const particle = document.createElement('div');
-            particle.style.position = 'fixed';
-            particle.style.width = Math.random() * 3 + 1 + 'px';
-            particle.style.height = particle.style.width;
-            particle.style.background = 'rgba(255, 215, 0, 0.5)';
-            particle.style.borderRadius = '50%';
-            particle.style.left = Math.random() * window.innerWidth + 'px';
-            particle.style.top = window.innerHeight + 'px';
-            particle.style.pointerEvents = 'none';
-            particle.style.zIndex = '1';
-            document.body.appendChild(particle);
+// Marquee
+const tags=['New Arrivals','✦','Gratis Ongkir','✦','Kualitas Premium','✦','House Of Diva','✦','Shopee Official','✦','Koleksi 2025','✦'];
+const mEl=document.getElementById('mqIn');
+mEl.innerHTML=[...tags,...tags,...tags,...tags].map(t=>`<span${t==='✦'?' class="sep"':''}>${t}</span>`).join('');
 
-            const duration = Math.random() * 3000 + 2000;
-            const drift = (Math.random() - 0.5) * 200;
+// Products
+const SHOPEE='https://shopee.co.id/houseofdiva';
+const prods=[
+  {n:'Silk Wrap Dress',c:'dress',p:1850000,b:'New',col:'#1e0a40'},
+  {n:'Lace Midi Gown',c:'dress',p:2650000,s:3200000,b:'Sale',col:'#16082e'},
+  {n:'Velvet Evening Dress',c:'dress',p:3100000,b:'',col:'#1c0d3c'},
+  {n:'Cashmere Trench Coat',c:'outerwear',p:4200000,b:'',col:'#110628'},
+  {n:'Satin Blazer Crop',c:'outerwear',p:1980000,s:2400000,b:'Sale',col:'#180a34'},
+  {n:'Structured Mini Bag',c:'tas',p:1350000,b:'New',col:'#0e0620'},
+  {n:'Velvet Clutch',c:'tas',p:950000,b:'',col:'#140730'},
+  {n:'Crystal Drop Earrings',c:'aksesoris',p:450000,b:'New',col:'#1c0a3e'},
+];
+const ICO={dress:'👗',outerwear:'🧥',tas:'👜',aksesoris:'💎'};
+function rend(f){
+  const g=document.getElementById('pg');
+  const list=f==='all'?prods:prods.filter(p=>p.c===f);
+  g.innerHTML=list.map((p,i)=>`
+  <div class="pc" data-aos="fade-up" data-aos-delay="${i*65}">
+    <div class="pi">
+      <div class="pi-in" style="width:100%;height:100%;background:linear-gradient(155deg,${p.col},#08031a);display:flex;align-items:center;justify-content:center;">
+        <span style="font-size:3.8rem;opacity:.45">${ICO[p.c]}</span>
+      </div>
+      ${p.b?`<div class="pbdg">${p.b}</div>`:''}
+      <a href="${SHOPEE}" target="_blank" rel="noopener" class="pshop">🛍 Beli di Shopee</a>
+    </div>
+    <div class="pinfo">
+      <div class="pcat">${p.c.charAt(0).toUpperCase()+p.c.slice(1)}</div>
+      <div class="pn">${p.n}</div>
+      <div class="pp">
+        ${p.s?`<span class="ori">Rp ${p.s.toLocaleString('id-ID')}</span>`:''}
+        <span class="${p.s?'sale':''}">Rp ${p.p.toLocaleString('id-ID')}</span>
+      </div>
+    </div>
+  </div>`).join('');
+  AOS.refresh();
+}
+function fltr(f,btn){document.querySelectorAll('.fb').forEach(b=>b.classList.remove('on'));btn.classList.add('on');rend(f);}
+rend('all');
 
-            particle.animate([
-                { transform: 'translateY(0px) translateX(0px)', opacity: 0 },
-                { transform: `translateY(-${window.innerHeight + 100}px) translateX(${drift}px)`, opacity: 0.8 },
-                { opacity: 0 }
-            ], {
-                duration: duration,
-                easing: 'linear'
-            }).onfinish = () => particle.remove();
-        }
+// Timer
+function tick(){
+  const now=new Date(),end=new Date();end.setHours(23,59,59);
+  let d=Math.max(0,Math.floor((end-now)/1e3));
+  const h=Math.floor(d/3600);d%=3600;const m=Math.floor(d/60);const s=d%60;
+  document.getElementById('tH').textContent=String(h).padStart(2,'0');
+  document.getElementById('tM').textContent=String(m).padStart(2,'0');
+  document.getElementById('tS').textContent=String(s).padStart(2,'0');
+}
+tick();setInterval(tick,1000);
 
-        setInterval(createParticle, 500);
-    </script>
+// Toast
+function showToast(msg){const t=document.getElementById('toast');document.getElementById('tmsg').textContent=msg;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),2700);}
+
+// Newsletter
+function sub(){
+  const v=document.getElementById('nle').value;
+  if(!v||!v.includes('@')){showToast('Masukkan email yang valid');return;}
+  showToast('Berhasil! Terima kasih sudah bergabung ✦');
+  document.getElementById('nle').value='';
+}
+</script>
 </body>
-
 </html>
